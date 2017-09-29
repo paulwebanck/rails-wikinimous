@@ -2,7 +2,7 @@
 
 <% @articles.each do |article| %>
   <h2><%= article.title %></h2>
-  <h3><%= article.content %></h3>
+  <%= raw markdown(article.content) %>
   <%= link_to "Show", article_path(article)%>
   <%= link_to "Edit", edit_article_path(article)%>
   <%= link_to "Delete", article_path(article),
